@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ CHANGE: title + description + canonical ============ -->
+<title>Getting Started — DarkvoyagerLabs Wiki</title>
+<meta name="description" content="An introduction to the DarkvoyagerLabs wiki — what it is, how to navigate it, and where to start.">
+<link rel="canonical" href="https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html">
+<!-- =================================================================== -->
+
+<meta name="theme-color" content="#05070a">
+<link rel="icon" type="image/png" href="../logo.png">
+<link rel="apple-touch-icon" href="../logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="../style.css">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DarkvoyagerLabs Wiki">
+<meta property="og:title" content="Getting Started — DarkvoyagerLabs Wiki">
+<meta property="og:description" content="An introduction to the DarkvoyagerLabs wiki.">
+<meta property="og:url" content="https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html">
+<meta property="og:image" content="https://wiki.darkvoyagerlabs.netlify.app/logo.png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Getting Started — DarkvoyagerLabs Wiki">
+<meta name="twitter:description" content="An introduction to the DarkvoyagerLabs wiki.">
+<meta name="twitter:image" content="https://wiki.darkvoyagerlabs.netlify.app/logo.png">
+
+<!-- Article structured data (helps Google understand this is a post) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Getting Started",
+  "description": "An introduction to the DarkvoyagerLabs wiki.",
+  "author": {
+    "@type": "Person",
+    "name": "Admin"
+  },
+  "datePublished": "2026-09-17",
+  "dateModified": "2026-09-17",
+  "publisher": {
+    "@type": "Organization",
+    "name": "DarkvoyagerLabs"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html"
+  }
+}
+</script>
+</head>
+<body>
+
+<header class="wiki-header">
+  <a class="wiki-brand" href="https://darkvoyagerlabs.netlify.app/">
+    <span class="brand-arrow">&#8592;</span>
+    <span class="brand-text">Darkvoyager<span class="accent">Labs</span> Wiki</span>
+  </a>
+  <nav class="wiki-nav">
+    <a href="../index.html">All posts</a>
+    <a href="https://darkvoyagerlabs.netlify.app/projects.html">Projects</a>
+    <a href="https://darkvoyagerlabs.netlify.app/connect.html">Connect</a>
+  </nav>
+</header>
+
+<main class="wiki-post">
+
+  <a class="back-link" href="../index.html">&#8592; Back to Wiki</a>
+
+  <article>
+    <!-- ============ CHANGE: post header ============ -->
+    <h1>Getting Started</h1>
+    <p class="post-author">Author: Admin</p>
+    <p class="post-date">2026-09-17</p>
+    <!-- ============================================= -->
+
+    <div class="post-body">
+      <!-- ============ CHANGE: post body ============ -->
+      <p>Welcome to the <strong>DarkvoyagerLabs wiki</strong>. This is where guides, docs and lore live for every project in the catalogue.</p>
+
+      <h2>How to read a post</h2>
+      <p>Every post has a header with a title, an author line, and a date. Below that, the body can contain any HTML you want — headings, lists, images, code blocks, links, whatever the post needs.</p>
+
+      <h2>Browsing the wiki</h2>
+      <ul>
+        <li>Go to the <a href="../index.html">wiki index</a> to see all posts.</li>
+        <li>Click any post card to open it.</li>
+        <li>Scroll to the bottom of any post to leave a comment.</li>
+      </ul>
+
+      <h2>Attachments</h2>
+      <p>Some posts include downloadable files. They appear in the Attachments section below the post body. For example:</p>
+      <ul>
+        <li><a href="../attachments/diagram.png" download>Download diagram.png</a></li>
+      </ul>
+
+      <h2>Comments</h2>
+      <p>Every post has a comment section at the bottom powered by GitHub Discussions. You'll need a free GitHub account to comment — this keeps spam out and means comments are stored openly and permanently.</p>
+      <!-- ============================================ -->
+    </div>
+  </article>
+
+  <section class="post-attachments">
+    <h2>Attachments</h2>
+    <ul>
+      <!-- ============ CHANGE: attachments list ============ -->
+      <li><a href="../attachments/diagram.png" download>diagram.png</a></li>
+      <!-- Remove this whole <section> if the post has no attachments -->
+      <!-- ======================================================= -->
+    </ul>
+  </section>
+
+  <section class="wiki-comments">
+    <h2>Comments</h2>
+    <div id="giscus-container"></div>
+  </section>
+
+</main>
+
+<footer class="wiki-footer">
+  <span>&copy; <span id="year"></span> DarkvoyagerLabs. All rights reserved.</span>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* =============================================================
+   GISCUS — free GitHub-powered comments.
+
+   BEFORE THIS WORKS, you must do the setup in the README (see the
+   bottom of this message). Then replace the four REPLACE_ME values
+   below with the ones giscus.app gives you.
+   ============================================================= */
+(function(){
+  const s = document.createElement("script");
+  s.src = "https://giscus.app/client.js";
+  s.setAttribute("data-repo", "darkvoyagerlabs/wiki");               /* REPLACE_ME */
+  s.setAttribute("data-repo-id", "R_kgDOxxxxxxxx");                  /* REPLACE_ME */
+  s.setAttribute("data-category", "Comments");
+  s.setAttribute("data-category-id", "DIC_kwDOxxxxxxxx");            /* REPLACE_ME */
+  s.setAttribute("data-mapping", "pathname");
+  s.setAttribute("data-strict", "0");
+  s.setAttribute("data-reactions-enabled", "1");
+  s.setAttribute("data-emit-metadata", "0");
+  s.setAttribute("data-input-position", "bottom");
+  s.setAttribute("data-theme", "dark_dimmed");
+  s.setAttribute("data-lang", "en");
+  s.setAttribute("data-loading", "lazy");
+  s.crossOrigin = "anonymous";
+  s.async = true;
+  document.getElementById("giscus-container").appendChild(s);
+})();
+</script>
+</body>
+</html>
