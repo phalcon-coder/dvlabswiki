@@ -3,66 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<!-- ============ CHANGE: title + description + canonical ============ -->
 <title>Getting Started — DarkvoyagerLabs Wiki</title>
-<meta name="description" content="An introduction to the DarkvoyagerLabs wiki — what it is, how to navigate it, and where to start.">
+<meta name="description" content="An introduction to the DarkvoyagerLabs wiki.">
 <link rel="canonical" href="https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html">
-<!-- =================================================================== -->
 
 <meta name="theme-color" content="#05070a">
 <link rel="icon" type="image/png" href="../logo.png">
-<link rel="apple-touch-icon" href="../logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="../style.css">
-
-<!-- Open Graph -->
-<meta property="og:type" content="article">
-<meta property="og:site_name" content="DarkvoyagerLabs Wiki">
-<meta property="og:title" content="Getting Started — DarkvoyagerLabs Wiki">
-<meta property="og:description" content="An introduction to the DarkvoyagerLabs wiki.">
-<meta property="og:url" content="https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html">
-<meta property="og:image" content="https://wiki.darkvoyagerlabs.netlify.app/logo.png">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Getting Started — DarkvoyagerLabs Wiki">
-<meta name="twitter:description" content="An introduction to the DarkvoyagerLabs wiki.">
-<meta name="twitter:image" content="https://wiki.darkvoyagerlabs.netlify.app/logo.png">
-
-<!-- Article structured data (helps Google understand this is a post) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Getting Started",
-  "description": "An introduction to the DarkvoyagerLabs wiki.",
-  "author": {
-    "@type": "Person",
-    "name": "Admin"
-  },
-  "datePublished": "2026-09-17",
-  "dateModified": "2026-09-17",
-  "publisher": {
-    "@type": "Organization",
-    "name": "DarkvoyagerLabs"
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://wiki.darkvoyagerlabs.netlify.app/posts/getting-started.html"
-  }
-}
-</script>
 </head>
 <body>
 
 <header class="wiki-header">
-  <a class="wiki-brand" href="https://darkvoyagerlabs.netlify.app/">
-    <span class="brand-arrow">&#8592;</span>
-    <span class="brand-text">Darkvoyager<span class="accent">Labs</span> Wiki</span>
-  </a>
+  <div class="wiki-brand-group">
+    <img src="../logo.png" alt="Logo" class="header-logo">
+    <a class="wiki-brand" href="https://darkvoyagerlabs.netlify.app/">
+      <span class="brand-arrow">&#8592;</span>
+      <span class="brand-text">Darkvoyager<span class="accent">Labs</span> Wiki</span>
+    </a>
+  </div>
+
   <nav class="wiki-nav">
+    <button class="search-trigger" id="openSearchBtn">
+      🔍 <span>Search...</span> <kbd>⌘K</kbd>
+    </button>
     <a href="../index.html">All posts</a>
     <a href="https://darkvoyagerlabs.netlify.app/projects.html">Projects</a>
     <a href="https://darkvoyagerlabs.netlify.app/connect.html">Connect</a>
@@ -74,14 +37,14 @@
   <a class="back-link" href="../index.html">&#8592; Back to Wiki</a>
 
   <article>
-    <!-- ============ CHANGE: post header ============ -->
+    <!-- Post Thumbnail Banner -->
+    <img src="../attachments/diagram.png" alt="Getting Started Banner" class="post-hero-thumb" onerror="this.style.display='none'">
+
     <h1>Getting Started</h1>
     <p class="post-author">Author: Admin</p>
     <p class="post-date">2026-09-17</p>
-    <!-- ============================================= -->
 
     <div class="post-body">
-      <!-- ============ CHANGE: post body ============ -->
       <p>Welcome to the <strong>DarkvoyagerLabs wiki</strong>. This is where guides, docs and lore live for every project in the catalogue.</p>
 
       <h2>How to read a post</h2>
@@ -101,18 +64,14 @@
       </ul>
 
       <h2>Comments</h2>
-      <p>Every post has a comment section at the bottom powered by GitHub Discussions. You'll need a free GitHub account to comment — this keeps spam out and means comments are stored openly and permanently.</p>
-      <!-- ============================================ -->
+      <p>Every post has a comment section at the bottom powered by GitHub Discussions.</p>
     </div>
   </article>
 
   <section class="post-attachments">
     <h2>Attachments</h2>
     <ul>
-      <!-- ============ CHANGE: attachments list ============ -->
       <li><a href="../attachments/diagram.png" download>diagram.png</a></li>
-      <!-- Remove this whole <section> if the post has no attachments -->
-      <!-- ======================================================= -->
     </ul>
   </section>
 
@@ -123,6 +82,18 @@
 
 </main>
 
+<!-- Search Modal -->
+<div class="search-modal" id="searchModal">
+  <div class="search-card">
+    <div class="search-input-wrapper">
+      <input type="text" id="searchInput" placeholder="Search posts, topics, content...">
+    </div>
+    <div class="search-results" id="searchResults">
+      <div style="padding: 1rem; color: var(--text-faint); text-align: center;">Start typing to search...</div>
+    </div>
+  </div>
+</div>
+
 <footer class="wiki-footer">
   <span>&copy; <span id="year"></span> DarkvoyagerLabs. All rights reserved.</span>
 </footer>
@@ -130,6 +101,7 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
+/* Giscus setup with updated category ID */
 (function(){
   const s = document.createElement("script");
   s.src = "https://giscus.app/client.js";
@@ -149,7 +121,53 @@ document.getElementById("year").textContent = new Date().getFullYear();
   s.async = true;
   document.getElementById("giscus-container").appendChild(s);
 })();
+
+/* Search Indexing Script */
+const postsIndex = [
+  {
+    title: "Getting Started",
+    url: "getting-started.html",
+    desc: "An introduction to the DarkvoyagerLabs wiki — what it is, how to navigate it, and where to start.",
+    keywords: "getting started intro navigation attachments lore wiki admin"
+  }
+];
+
+const modal = document.getElementById('searchModal');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const openBtn = document.getElementById('openSearchBtn');
+
+function openSearch() { modal.classList.add('active'); searchInput.focus(); }
+function closeSearch() { modal.classList.remove('active'); }
+
+openBtn.addEventListener('click', openSearch);
+window.addEventListener('keydown', (e) => {
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+  if (e.key === 'Escape') closeSearch();
+});
+modal.addEventListener('click', (e) => { if (e.target === modal) closeSearch(); });
+
+searchInput.addEventListener('input', (e) => {
+  const query = e.target.value.toLowerCase().trim();
+  if (!query) {
+    searchResults.innerHTML = `<div style="padding: 1rem; color: var(--text-faint); text-align: center;">Start typing to search...</div>`;
+    return;
+  }
+  const matches = postsIndex.filter(post => 
+    post.title.toLowerCase().includes(query) || 
+    post.desc.toLowerCase().includes(query) ||
+    post.keywords.toLowerCase().includes(query)
+  );
+
+  searchResults.innerHTML = matches.length === 0 
+    ? `<div style="padding: 1rem; color: var(--text-faint); text-align: center;">No matching posts found.</div>`
+    : matches.map(post => `
+      <a href="${post.url}" class="search-result-item">
+        <h4>${post.title}</h4>
+        <p>${post.desc}</p>
+      </a>
+    `).join('');
+});
 </script>
-  
 </body>
 </html>
