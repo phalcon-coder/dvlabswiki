@@ -130,26 +130,19 @@
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
-/* =============================================================
-   GISCUS — free GitHub-powered comments.
-
-   BEFORE THIS WORKS, you must do the setup in the README (see the
-   bottom of this message). Then replace the four REPLACE_ME values
-   below with the ones giscus.app gives you.
-   ============================================================= */
 (function(){
   const s = document.createElement("script");
   s.src = "https://giscus.app/client.js";
-  s.setAttribute("data-repo", "phalcon-coder/dvlabswiki");               /* REPLACE_ME */
-  s.setAttribute("data-repo-id", "R_kgDOUe29yw");                  /* REPLACE_ME */
+  s.setAttribute("data-repo", "phalcon-coder/dvlabswiki");
+  s.setAttribute("data-repo-id", "R_kgDOUe29yw");
   s.setAttribute("data-category", "Comments");
-  s.setAttribute("data-category-id", "DIC_kwDOUe29y84DF0Pz");            /* REPLACE_ME */
+  s.setAttribute("data-category-id", "DIC_kwDOUe29y84DGl_w");
   s.setAttribute("data-mapping", "pathname");
   s.setAttribute("data-strict", "0");
   s.setAttribute("data-reactions-enabled", "1");
   s.setAttribute("data-emit-metadata", "0");
-  s.setAttribute("data-input-position", "bottom");
-  s.setAttribute("data-theme", "dark_dimmed");
+  s.setAttribute("data-input-position", "top");
+  s.setAttribute("data-theme", "dark_high_contrast");
   s.setAttribute("data-lang", "en");
   s.setAttribute("data-loading", "lazy");
   s.crossOrigin = "anonymous";
@@ -157,5 +150,6 @@ document.getElementById("year").textContent = new Date().getFullYear();
   document.getElementById("giscus-container").appendChild(s);
 })();
 </script>
+  
 </body>
 </html>
