@@ -1,0 +1,15 @@
+{
+  "name": "DarkvoyagerLabs Wiki",
+  "short_name": "DVLabs Wiki",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#05070d",
+  "theme_color": "#05070d",
+  "icons": [
+    {
+      "src": "/assets/img/logo.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
