@@ -1,0 +1,21 @@
+{
+  "posts": [
+    {
+      "slug": "getting-started",
+      "title": "Getting Started",
+      "description": "An introduction to the DarkvoyagerLabs wiki — what it is, how to navigate it, and where to start.",
+      "author": "Admin",
+      "date": "2026-09-17",
+      "category": "Guides",
+      "tags": [
+        "getting started",
+        "intro",
+        "navigation",
+        "attachments",
+        "lore"
+      ],
+      "readingMinutes": 2,
+      "featured": true
+    }
+  ]
+}
